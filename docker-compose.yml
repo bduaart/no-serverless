@@ -1,0 +1,6 @@
+services:
+  no-serverless-project:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    image: no-serverless-project:latest

@@ -1,0 +1,23 @@
+version: 0.2
+run-as: root
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - echo Cleaning node_modules directory
+      - rm -rf app/node_modules
+      - echo Installing yarn and libs
+      - npm install -g yarn
+      - cd app/ && yarn install
+      - zip -r cron.zip src/cron index.js node_modules
+      - aws s3 cp cron.zip s3://no-serverless/cron.zip
+  build:
+    commands:
+      - echo "Cron function build complete"
+cache:
+  files:
+    - cron.zip
+  paths:
+    - node_modules

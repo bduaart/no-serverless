@@ -1,0 +1,19 @@
+services:
+  yarn:
+    user: root
+    image: no-serverless-project:latest
+    volumes:
+      - ~/.aws:/root/.aws:ro
+      - ./app:/application
+    environment:
+      TZ: "America/Fortaleza"
+      AWS_DEFAULT_REGION: "us-east-1"
+      AWS_PROFILE: bhut
+      AWS_REGION: us-east-1
+    networks:
+      - net_no_serverless
+    entrypoint: yarn
+
+networks:
+  net_no_serverless:
+    external: true

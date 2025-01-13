@@ -1,0 +1,22 @@
+services:
+  no-serverless-project:
+    container_name: no-serverless-project
+    image: no-serverless-project:latest
+    ports:
+      - "3099:3099"
+      - "9099:9229"
+    volumes:
+      - ~/.aws:/root/.aws:ro
+      - ./app:/application
+    environment:
+      TZ: "America/Fortaleza"
+      NODE_ENV: development
+      AWS_PROFILE: bhut
+      AWS_REGION: us-east-1
+    networks:
+      - net_no_serverless
+    command: [ "yarn", "dev" ]
+
+networks:
+  net_no_serverless:
+    external: true

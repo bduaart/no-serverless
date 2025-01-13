@@ -1,0 +1,15 @@
+.idea
+
+/app/lib
+/app/.build/
+/app/build
+/app/node_modules
+/app/yarn-error.log
+/app/.serverless/
+
+/app/.eslintrc.js
+/app/yarn.lock
+/app/.prettierrc
+/app/.prettierignore
+
+
