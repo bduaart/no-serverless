@@ -13,9 +13,12 @@ phases:
       - cd app/ && yarn install
       - ls
       - yarn build
+  build:
+    commands:
       - zip -r sqs.zip build/ node_modules package.json
       - aws s3 cp sqs.zip s3://bd-no-serverless/sqs.zip
-  build:
+      - aws lambda update-function-code --function-name queue-hello-world --s3-bucket bd-no-serverless --s3-key sqs.zip
+  post_build:
     commands:
       - echo "Sqs function build complete"
 cache:
