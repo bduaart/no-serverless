@@ -11,7 +11,8 @@ phases:
       - echo Installing yarn and libs
       - npm install -g yarn
       - cd app/ && yarn install
-      - zip -r sqs.zip src/sqs node_modules
+      - tsc
+      - zip -r sqs.zip .build/sqs node_modules
       - aws s3 cp sqs.zip s3://bd-no-serverless/sqs.zip
   build:
     commands:
