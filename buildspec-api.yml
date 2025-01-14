@@ -16,7 +16,7 @@ phases:
     commands:
       - zip -r api.zip build/ node_modules package.json
       - aws s3 cp api.zip s3://bd-no-serverless/api.zip
-      - aws lambda update-function-code --function-name $LAMBDA_API_FUNCTION_NAME --s3-bucket $S3_BUCKET --s3-key api.zip
+      - aws lambda update-function-code --function-name $LAMBDA_FUNCTION_NAME --s3-bucket $S3_BUCKET --s3-key api.zip
   post_build:
     commands:
       - echo "API function build complete"

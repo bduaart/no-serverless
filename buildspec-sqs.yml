@@ -17,7 +17,7 @@ phases:
     commands:
       - zip -r sqs.zip build/ node_modules package.json
       - aws s3 cp sqs.zip s3://bd-no-serverless/sqs.zip
-      - aws lambda update-function-code --function-name $LAMBDA_SQS_FUNCTION_NAME --s3-bucket $S3_BUCKET --s3-key sqs.zip
+      - aws lambda update-function-code --function-name $LAMBDA_FUNCTION_NAME --s3-bucket $S3_BUCKET --s3-key sqs.zip
   post_build:
     commands:
       - echo "Sqs function build complete"
