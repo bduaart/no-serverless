@@ -7,3 +7,7 @@
 
 .env
 docker-compose.override.yml
+*.iml
+
+/infra/terraform/.terraform.lock.hcl
+/infra/terraform/.terraform/
