@@ -7,7 +7,6 @@ module "cron_lambda" {
   s3_key             = "cron.zip"
   cron_rule_name     = "cron-bduarte-schedule"
   schedule_expression = "cron(0/2 * * * ? *)"
-  #rule_state         = "ENABLED"
-  rule_state         = "DISABLED"
+  rule_state         = "ENABLED"
   target_id          = "cron-bduarte-job-target"
 }

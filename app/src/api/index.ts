@@ -6,7 +6,7 @@ export const processApiHandler = async (event: any): Promise<any> => {
         const httpMethod = event.httpMethod;
 
         if (httpMethod === 'GET') {
-            handleMessage("GET request");
+            handleMessage("GET Brunão request");
 
             return {
                 statusCode: 200,
@@ -14,7 +14,7 @@ export const processApiHandler = async (event: any): Promise<any> => {
             };
         }
         if (httpMethod === 'POST') {
-            handleMessage("POST request");
+            handleMessage("POST Brunão request");
 
             return {
                 statusCode: 200,
