@@ -1,5 +1,5 @@
 module "sqs_lambda_bduarte_queue" {
-  source      = "sqs"
+  source      = "./sqs"
   queue_name  = "queue-bduarte"
   lambda_name = "lambda-queue-bduarte"
   handler     = "build/sqs/handler.processSQSHandler"

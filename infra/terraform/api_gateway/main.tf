@@ -1,7 +1,7 @@
 resource "aws_lambda_function" "lambda" {
   function_name = var.lambda_name
   handler       = var.handler
-  runtime       = "nodejs18.x"
+  runtime       = "nodejs20.x"
   role          = var.lambda_role_arn
   s3_bucket     = var.s3_bucket
   s3_key        = var.s3_key

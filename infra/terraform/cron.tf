@@ -1,5 +1,5 @@
 module "cron_lambda" {
-  source             = "cron"
+  source             = "./cron"
   lambda_name        = "cron-bduarte-job"
   handler            = "build/cron/handler.processSchedulerHandler"
   lambda_role_arn    = aws_iam_role.lambda_role.arn

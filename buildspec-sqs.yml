@@ -4,7 +4,7 @@ run-as: root
 phases:
   install:
     runtime-versions:
-      nodejs: 18
+      nodejs: 20
     commands:
       - echo Cleaning node_modules directory
       - rm -rf app/node_modules
