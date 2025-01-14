@@ -7,7 +7,6 @@ resource "aws_lambda_function" "lambda" {
   handler       = var.handler
   runtime       = "nodejs20.x"
   role          = var.lambda_role_arn
- # role          = aws_iam_role.lambda_role.arn
   s3_bucket     = var.s3_bucket
   s3_key        = var.s3_key
 }
