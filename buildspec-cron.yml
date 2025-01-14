@@ -13,7 +13,7 @@ phases:
       - cd app/ && yarn install
       - pwd
       - yarn build
-      - zip -r cron.zip .build/cron node_modules
+      - zip -r cron.zip build/cron node_modules package.json
       - aws s3 cp cron.zip s3://bd-no-serverless/cron.zip
   build:
     commands:
