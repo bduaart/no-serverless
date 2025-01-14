@@ -11,10 +11,7 @@ phases:
       - echo Installing yarn and libs
       - npm install -g yarn
       - cd app/ && yarn install
-      - pwd
       - yarn build
-      - zip -r cron.zip build/ node_modules package.json
-      - aws s3 cp cron.zip s3://bd-no-serverless/cron.zip
   build:
     commands:
       - zip -r cron.zip build/ node_modules package.json

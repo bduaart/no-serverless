@@ -11,10 +11,7 @@ phases:
       - echo Installing yarn and libs
       - npm install -g yarn
       - cd app/ && yarn install
-      - echo ls
       - yarn build
-      - zip -r api.zip build/ node_modules package.json
-      - aws s3 cp api.zip s3://bd-no-serverless/api.zip
   build:
     commands:
       - zip -r api.zip build/ node_modules package.json

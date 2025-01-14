@@ -3,9 +3,27 @@ import {handleError, handleMessage} from "../utils/logger";
 export const processApiHandler = async (event: any): Promise<any> => {
     try {
         handleMessage(`Executing API`);
+        const httpMethod = event.httpMethod;
+
+        if (httpMethod === 'GET') {
+            handleMessage("GET request");
+
+            return {
+                statusCode: 200,
+                body: JSON.stringify({ message: "GET executed successfully" }),
+            };
+        }
+        if (httpMethod === 'POST') {
+            handleMessage("POST request");
+
+            return {
+                statusCode: 200,
+                body: JSON.stringify({ message: "POST executed successfully" }),
+            };
+        }
         return {
-            statusCode: 200,
-            body: JSON.stringify({ message: "Successfully executed" }),
+            statusCode: 405,
+            body: JSON.stringify({ error: `Method ${httpMethod} not allowed` }),
         };
     } catch (e) {
         handleError(e);
