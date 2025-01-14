@@ -13,7 +13,7 @@ phases:
       - cd app/ && yarn install
       - ls
       - yarn build
-      - zip -r sqs.zip build/sqs node_modules package.json
+      - zip -r sqs.zip build/sqs/ node_modules package.json
       - aws s3 cp sqs.zip s3://bd-no-serverless/sqs.zip
   build:
     commands:

@@ -13,7 +13,7 @@ phases:
       - cd app/ && yarn install
       - echo ls
       - yarn build
-      - zip -r api.zip build/api node_modules package.json
+      - zip -r api.zip build/api/ node_modules package.json
       - aws s3 cp api.zip s3://bd-no-serverless/api.zip
   build:
     commands:
